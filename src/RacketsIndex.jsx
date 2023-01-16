@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { RacketsShow } from './RacketsShow';
 
 export function RacketsIndex() {
 	const [ rackets, setRackets ] = useState([1,2,3])	
@@ -20,18 +21,12 @@ export function RacketsIndex() {
 
 	useEffect(getRackets, [])
 
-	const serializeRacket = (racket) => (
-		<div>
-			<h2>Racket</h2>
-			<p>Created at: {racket.created_at}</p>
-			<p>Updated at: {racket.updated_at}</p>
-		</div>
-	)
-
 	return (
 		<div>
 			<h1>Rackets Index</h1>
-			{rackets.map(serializeRacket)}
+			{rackets.map((racket, index) => (
+				<RacketsShow key={index} racket={racket}/>
+			))}
 		</div>
 	)
 }
