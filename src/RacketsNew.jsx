@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import { RacketsForm } from './RacketsForm'
+
 export function RacketsNew(props) {
 	const handleSubmit = (event) => {
 		event.preventDefault()
@@ -16,12 +18,6 @@ export function RacketsNew(props) {
 	}
 
 	return (
-		<div>
-			<h1>Rackets New</h1>
-			<form onSubmit={handleSubmit}>
-				<div>Description: <input type="text" name="description"/></div>
-				<button type='submit'>Create Racket</button>
-			</form>
-		</div>
+		<RacketsForm onSubmit={handleSubmit} submit='Create Racket'/>
 	)
 }
