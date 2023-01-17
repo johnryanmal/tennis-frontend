@@ -22,9 +22,14 @@ export function Content() {
 
 	useEffect(getRackets, [])
 
+  const onRacket = (racket) => {
+    console.log(racket)
+    setRackets([...rackets, racket])
+  }
+
   return (
     <div>
-      <RacketsNew />
+      <RacketsNew onSubmit={onRacket} />
       <RacketsIndex rackets={rackets}/>
     </div>
   );
