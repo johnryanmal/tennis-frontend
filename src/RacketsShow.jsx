@@ -1,3 +1,5 @@
+import { RacketsDelete } from './RacketsDelete'
+
 export function RacketsShow(props) {
   const racket = props.racket
   
@@ -9,6 +11,7 @@ export function RacketsShow(props) {
         <p>Created at: {racket.created_at}</p>
         <p>Updated at: {racket.updated_at}</p>
         {racket.description && (<p>Description:<br/>{racket.description}</p>)}
+        <RacketsDelete racket={racket} onDelete={props.onDelete}/>
       </div>}
     </div>
   );

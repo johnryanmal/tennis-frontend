@@ -35,10 +35,14 @@ export function Content() {
     setRacket(racket)
   }
 
+  const removeRacket = (racket) => {
+    console.log('delete', racket)
+  }
+
   return (
     <div>
-      <RacketsNew onSubmit={addRacket} />
-      <RacketsShow racket={racket}/>
+      <RacketsNew onNew={addRacket} />
+      <RacketsShow racket={racket} onDelete={removeRacket}/>
       <RacketsIndex rackets={rackets} onSelect={selectRacket}/>
     </div>
   );

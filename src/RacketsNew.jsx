@@ -8,7 +8,7 @@ export function RacketsNew(props) {
 		axios.post('http://localhost:3000/rackets', params)
 		.then((response) => {
 			let racket = response.data?.racket
-			props.onSubmit(racket)
+			props.onNew(racket)
 		})
 		.catch((error) => {
 			console.error(error)
