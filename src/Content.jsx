@@ -6,6 +6,7 @@ import { RacketsShow } from './RacketsShow'
 
 export function Content() {
   const [rackets, setRackets] = useState([])
+  const [racket, setRacket] = useState()
 
   const getRackets = () => {
 		axios.get('http://localhost:3000/rackets')
@@ -31,7 +32,7 @@ export function Content() {
   return (
     <div>
       <RacketsNew onSubmit={onRacket} />
-      <RacketsShow/>
+      <RacketsShow racket={racket}/>
       <RacketsIndex rackets={rackets}/>
     </div>
   );
