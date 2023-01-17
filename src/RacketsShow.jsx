@@ -1,4 +1,5 @@
 import { RacketsDelete } from './RacketsDelete'
+import { RacketsEdit } from './RacketsEdit'
 
 export function RacketsShow(props) {
   const racket = props.racket
@@ -12,6 +13,7 @@ export function RacketsShow(props) {
         <p>Updated at: {racket.updated_at}</p>
         {racket.description && (<p>Description:<br/>{racket.description}</p>)}
         <RacketsDelete racket={racket} onDelete={props.onDelete}/>
+        <RacketsEdit racket={racket}/>
       </div>}
     </div>
   );
