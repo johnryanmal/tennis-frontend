@@ -5,7 +5,7 @@ export function RacketsIndex(props) {
 		<div>
 			<h1>Rackets Index</h1>
 			{props.rackets?.map((racket, index) => (
-				<RacketsIndexShow key={index} racket={racket}/>
+				<RacketsIndexShow key={index} racket={racket} onSelect={props.onSelect}/>
 			))}
 		</div>
 	)

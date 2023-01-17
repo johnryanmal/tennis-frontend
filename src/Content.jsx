@@ -1,7 +1,8 @@
-import { RacketsIndex }from './RacketsIndex'
-import { RacketsNew } from './RacketsNew'
 import axios from 'axios'
 import { useState, useEffect  } from 'react'
+
+import { RacketsIndex }from './RacketsIndex'
+import { RacketsNew } from './RacketsNew'
 import { RacketsShow } from './RacketsShow'
 
 export function Content() {
@@ -24,16 +25,21 @@ export function Content() {
 
 	useEffect(getRackets, [])
 
-  const onRacket = (racket) => {
-    console.log(racket)
+  const addRacket = (racket) => {
+    console.log('add', racket)
     setRackets([...rackets, racket])
+  }
+
+  const selectRacket = (racket) => {
+    console.log('select', racket)
+    setRacket(racket)
   }
 
   return (
     <div>
-      <RacketsNew onSubmit={onRacket} />
+      <RacketsNew onSubmit={addRacket} />
       <RacketsShow racket={racket}/>
-      <RacketsIndex rackets={rackets}/>
+      <RacketsIndex rackets={rackets} onSelect={selectRacket}/>
     </div>
   );
 }
