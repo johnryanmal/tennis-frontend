@@ -6,9 +6,10 @@ export function RacketsNew(props) {
 	const handleSubmit = (event) => {
 		event.preventDefault()
 		let params = new FormData(event.target)
-		event.target.reset()
 		axios.post('http://localhost:3000/rackets', params)
 		.then((response) => {
+			event.target.reset()
+
 			let racket = response.data?.racket
 			props.onNew(racket)
 		})
@@ -18,6 +19,10 @@ export function RacketsNew(props) {
 	}
 
 	return (
-		<RacketsForm onSubmit={handleSubmit} submit='Create Racket'/>
+		<div>
+			<h1>Rackets New</h1>
+			<RacketsForm onSubmit={handleSubmit} submit='Create Racket'/>
+		</div>
+		
 	)
 }
