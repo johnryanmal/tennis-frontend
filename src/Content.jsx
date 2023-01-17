@@ -37,6 +37,8 @@ export function Content() {
 
   const removeRacket = (racket) => {
     console.log('delete', racket)
+    setRackets(rackets.filter((item) => item.id !== racket.id))
+    setRacket()
   }
 
   return (
