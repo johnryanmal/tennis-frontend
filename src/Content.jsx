@@ -2,6 +2,7 @@ import { RacketsIndex }from './RacketsIndex'
 import { RacketsNew } from './RacketsNew'
 import axios from 'axios'
 import { useState, useEffect  } from 'react'
+import { RacketsShow } from './RacketsShow'
 
 export function Content() {
   const [rackets, setRackets] = useState([])
@@ -30,6 +31,7 @@ export function Content() {
   return (
     <div>
       <RacketsNew onSubmit={onRacket} />
+      <RacketsShow/>
       <RacketsIndex rackets={rackets}/>
     </div>
   );
