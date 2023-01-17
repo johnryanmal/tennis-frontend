@@ -1,12 +1,10 @@
 import './App.css'
-import { RacketsIndex }from './RacketsIndex'
-import { RacketsNew }from './RacketsNew'
+import { Content } from './Content'
 
 function App() {
   return (
     <div className="App">
-      <RacketsNew/>
-      <RacketsIndex/>
+      <Content/>
     </div>
   )
 }
