@@ -13,7 +13,7 @@ export function RacketsEdit(props) {
 			event.target.reset()
 
 			let racket = response.data?.racket
-			console.log(response)
+			props.onUpdate(racket)
 		})
 		.catch((error) => {
 			console.error(error)
@@ -21,6 +21,6 @@ export function RacketsEdit(props) {
 	}
 
 	return (
-		<RacketsForm onSubmit={handleSubmit} submit='Update Racket'/>
+		<RacketsForm onSubmit={handleSubmit} submit='Update'/>
 	)
 }

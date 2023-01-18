@@ -41,10 +41,16 @@ export function Content() {
     setRacket()
   }
 
+  const updateRacket = (racket) => {
+    console.log('update', racket)
+    setRackets(rackets.map((item) => item.id === racket.id ? racket : item))
+    setRacket(racket)
+  }
+
   return (
     <div>
       <RacketsNew onNew={addRacket} />
-      <RacketsShow racket={racket} onDelete={removeRacket}/>
+      <RacketsShow racket={racket} onDelete={removeRacket} onUpdate={updateRacket}/>
       <RacketsIndex rackets={rackets} onSelect={selectRacket}/>
     </div>
   );

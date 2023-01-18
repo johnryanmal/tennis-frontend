@@ -13,7 +13,7 @@ export function RacketsShow(props) {
         <p>Updated at: {racket.updated_at}</p>
         {racket.description && (<p>Description:<br/>{racket.description}</p>)}
         <RacketsDelete racket={racket} onDelete={props.onDelete}/>
-        <RacketsEdit racket={racket}/>
+        <RacketsEdit racket={racket} onUpdate={props.onUpdate}/>
       </div>}
     </div>
   );
