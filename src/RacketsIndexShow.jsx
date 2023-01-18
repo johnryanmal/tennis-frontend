@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 export function RacketsIndexShow(props) {
 	const racket = props.racket
@@ -8,7 +9,9 @@ export function RacketsIndexShow(props) {
 			<p>Created at: {racket.created_at}</p>
 			<p>Updated at: {racket.updated_at}</p>
 			{racket.description && (<p>Description:<br/>{racket.description}</p>)}
-			<button onClick={() => props.onSelect(racket)}>Select</button>
+			<Link to="/show">
+				<button onClick={() => props.onSelect(racket)}>Select</button>
+			</Link>
 		</div>
 	)
 }

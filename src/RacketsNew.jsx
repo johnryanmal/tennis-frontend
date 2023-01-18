@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import { RacketsForm } from './RacketsForm'
 
@@ -22,7 +23,9 @@ export function RacketsNew(props) {
 		<div>
 			<h1>Rackets New</h1>
 			<RacketsForm onSubmit={handleSubmit} submit='Create Racket'/>
+			<Link to="/">
+        <button>Back</button>
+      </Link>
 		</div>
-		
 	)
 }
