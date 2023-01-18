@@ -23,6 +23,7 @@ export function RacketsNew(props) {
 		<div>
 			<h1>Rackets New</h1>
 			<RacketsForm onSubmit={handleSubmit} submit='Create Racket'/>
+			<hr/>
 			<Link to="/">
         <button>Back</button>
       </Link>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 import { RacketsDelete } from './RacketsDelete'
-import { RacketsEdit } from './RacketsEdit'
 
 export function RacketsShow(props) {
   const racket = props.racket
@@ -14,9 +13,12 @@ export function RacketsShow(props) {
         <p>Created at: {racket.created_at}</p>
         <p>Updated at: {racket.updated_at}</p>
         {racket.description && (<p>Description:<br/>{racket.description}</p>)}
+        <Link to="/edit">
+          <button>Edit</button>
+        </Link>
         <RacketsDelete racket={racket} onDelete={props.onDelete}/>
-        <RacketsEdit racket={racket} onUpdate={props.onUpdate}/>
       </div>}
+      <hr/>
       <Link to="/">
         <button>Back</button>
       </Link>
