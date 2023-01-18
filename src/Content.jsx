@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect  } from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 import { RacketsIndex }from './RacketsIndex'
 import { RacketsNew } from './RacketsNew'
@@ -47,11 +48,17 @@ export function Content() {
     setRacket(racket)
   }
 
+  const racketsNew = <RacketsNew onNew={addRacket} />
+  const racketsShow = <RacketsShow racket={racket} onDelete={removeRacket} onUpdate={updateRacket}/>
+  const racketsIndex = <RacketsIndex rackets={rackets} onSelect={selectRacket}/>
+
   return (
     <div>
-      <RacketsNew onNew={addRacket} />
-      <RacketsShow racket={racket} onDelete={removeRacket} onUpdate={updateRacket}/>
-      <RacketsIndex rackets={rackets} onSelect={selectRacket}/>
+      <Routes>
+        <Route path="/new" element={racketsNew}/>
+        <Route path="/show" element={racketsShow}/>
+        <Route path="/" element={racketsIndex}/>
+      </Routes>
     </div>
   );
 }
